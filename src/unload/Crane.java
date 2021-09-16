@@ -1,11 +1,9 @@
 package unload;
 
-import generator.Sheep;
-
-import java.time.LocalDateTime;
+import generator.Ship;
 
 public interface Crane {
     public final int countOfCrane = 1;
 
-    public long getTimeOfUnloading(Sheep sheep);
+    public long getTimeOfUnloading(Ship ship);
 }

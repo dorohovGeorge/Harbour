@@ -1,12 +1,10 @@
 package unload;
 
-import generator.Sheep;
-
-import java.time.LocalDateTime;
+import generator.Ship;
 
 public class CraneForLiquid implements Crane {
     @Override
-    public long getTimeOfUnloading(Sheep sheep) {
+    public long getTimeOfUnloading(Ship ship) {
         return 0;
     }
 }

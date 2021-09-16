@@ -2,7 +2,7 @@ package generator;
 
 import java.util.*;
 
-public class Sheep {
+public class Ship {
 
     public enum Cargo {
         LOOSE, //зыбучий
@@ -12,43 +12,43 @@ public class Sheep {
 
     public Cargo transportedCargo;
     public int dimension;
-    private String nameOfSheep;
+    private String nameOfShip;
 
-    public Sheep(String sheep, Cargo cargo, int weight) {
+    public Ship(String ship, Cargo cargo, int weight) {
         transportedCargo = cargo;
         dimension = weight;
-        nameOfSheep = sheep;
+        nameOfShip = ship;
     }
 
-    public Sheep(Cargo cargo, int weight) {
+    public Ship(Cargo cargo, int weight) {
         transportedCargo = cargo;
         dimension = weight;
-        nameOfSheep = getRandomNameOfSheep();
+        nameOfShip = getRandomNameOfShip();
     }
 
-    public Sheep() {
+    public Ship() {
         this.transportedCargo = getRandomCargo();
-        this.nameOfSheep = getRandomNameOfSheep();
+        this.nameOfShip = getRandomNameOfShip();
         this.dimension = getRandomWeight();
     }
 
-    public void setNameOfSheep(String sheep) {
-        nameOfSheep = sheep;
+    public void setNameOfShip(String ship) {
+        nameOfShip = ship;
     }
 
-    public String getNameOfSheep() {
-        return nameOfSheep;
+    public String getNameOfShip() {
+        return nameOfShip;
     }
 
-    private String getRandomNameOfSheep() throws ArrayIndexOutOfBoundsException {
-        if (Schedule.namesOfSheeps.isEmpty()) {
+    private String getRandomNameOfShip() throws ArrayIndexOutOfBoundsException {
+        if (Schedule.namesOfShips.isEmpty()) {
             System.out.println("Список с именами пуст, создавай ручками корабль");
             return "";
         }
         Random random = new Random(System.currentTimeMillis());
-        int numberOurName = random.nextInt(Schedule.namesOfSheeps.size() - 1);
-        String name = Schedule.namesOfSheeps.get(numberOurName);
-        Schedule.namesOfSheeps.remove(numberOurName);
+        int numberOurName = random.nextInt(Schedule.namesOfShips.size() - 1);
+        String name = Schedule.namesOfShips.get(numberOurName);
+        Schedule.namesOfShips.remove(numberOurName);
         return name;
     }
 
